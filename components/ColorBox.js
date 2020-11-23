@@ -1,14 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const ColorBox = props => {
-  const colorStyle = {
-    backgroundColor: props.hexCode,
-  };
+const ColourBox = ({ hexCode, colorName }) => {
+  const textColour =
+    parseInt(hexCode.replace('#', ''), 16) > 0xffffff / 1.1 ? 'black' : 'white';
   return (
-    <View style={[StyleSheet.box, colorStyle]}>
-      <Text style={styles.text}>
-            {props.colorName} {props.hexCode}
+    <View style={[styles.box, { backgroundColor: hexCode }]}>
+      <Text style={[styles.boxText, { color: textColour }]}>
+        {colorName}: {hexCode}
       </Text>
     </View>
   );
@@ -17,13 +16,15 @@ const ColorBox = props => {
 const styles = StyleSheet.create({
   box: {
     padding: 10,
-    borderRadius: 3,
     justifyContent: 'center',
-    marginBottom: 10,
+    alignItems: 'center',
+    borderRadius: 3,
+    marginVertical: 5,
   },
-  text: {
-    fontWeight: 'bold',
+  boxText: {
     color: 'white',
+    fontSize: 18,
   },
 });
-export default ColorBox;
+
+export default ColourBox;
