@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet, FlatList, SafeAreaView, Image } from 'react-native';
+
 const Goals = ({ goal }) => {
   return (
     <View style={styles.GoalsBox}>
@@ -8,8 +9,11 @@ const Goals = ({ goal }) => {
       {{
         width: 250,
         height: 150,
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
-      source={{ uri: goal.src }} />
+        source={{ uri: goal.src }}
+      />
     </View>
   );
 };
@@ -40,18 +44,24 @@ const GOALS = [
     src:'https://img.freepik.com/free-photo/beautiful-black-girl-is-engaged-gym_1157-23736.jpg?size=626&ext=jpg',
   },
 ]
-const App = () => {
+
+const MyApp = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView> 
+    <View style={styles.pageview}>
+    <Text style={styles.text2}>MY VISION BOARD</Text>
+
       <FlatList
         style={{ padding: 20 }}
         data={GOALS}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Goals goal={item} />}
       />
+      </View>
     </SafeAreaView>
   );
 };
+
 const styles = StyleSheet.create({
   GoalsBox: {
     justifyContent: 'center',
@@ -68,11 +78,24 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontFamily: 'AvenirNextCondensed-HeavyItalic',
   },
+  text2: {
+    fontWeight: 'bold',
+    fontSize: 50,
+    color: '#F778A1',
+    backgroundColor: 'white',
+    fontFamily: 'AvenirNextCondensed-HeavyItalic',
+    padding: 20,
+  },
+  pageview: {
+    paddingBottom: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   listItem: {
-    width: 250,
-    height: 150,
+    width: 350,
+    height: 200,
     justifyContent: 'center',
     alignItems: 'center',
   },
 });
-export default App;
+export default MyApp;
