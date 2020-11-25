@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
 
-const MyApp = () => {
+const About = () => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -30,6 +30,7 @@ const MyApp = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+    paddingTop: 70,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ECC5C0',
@@ -51,4 +52,4 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
 });
-export default MyApp;
+export default About;

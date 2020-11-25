@@ -1,64 +1,56 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import Home from './screens/Home';
-import About from './screens/About';
-import VisionBoard from './screens/VisionBoard';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-
-const MyApp = ({ navigation }) => {
+const App = ({ navigation }) => {
   return (
-      <View style={styles.container}>
+    <View style={styles.container}>
+      <View style={styles.HeaderBox}>
+        <Text style={styles.heading}> VISION VALLEY</Text>
+      </View>
 
-        <View style={styles.HeaderBox}>
-         <Text style={styles.heading}>VISION VALLEY</Text>
-        </View>
+      <View style={styles.box2}>
+        <Text style={styles.text2}>Watch all your dreams come true!</Text>
+      </View>
 
-        <View style={styles.box2}>
-          <Text style={styles.text2}>Watch all your dreams come true!</Text>
-        </View>
-
-        <View style={[styles.box, styles.vision]}>
-        <TouchableOpacity onPress={() => navigation.push('VisionBoard')}>
+      <View style={[styles.box, styles.vision]}>
+      <TouchableOpacity onPress={() => navigation.push('VisionBoard')}>
           <Text style={styles.text}>Go to vision board</Text>
           </TouchableOpacity>
-        </View>
+      </View>
 
-        <View style={[styles.box, styles.diary]}>
-          <Text style={styles.text}>Diary entries</Text>
-        </View>
+      <View style={[styles.box, styles.diary]}>
+        <Text style={styles.text}>Diary entries</Text>
+      </View>
 
-        <View style={[styles.box, styles.settings]}>
-          <Text style={styles.text}>Settings</Text>
-        </View>
+      <View style={[styles.box, styles.settings]}>
+        <Text style={styles.text}>Settings</Text>
+      </View>
 
-        <View style={[styles.box, styles.about]}>
-          <TouchableOpacity onPress={() => navigation.push('About')}>
-            <Text style={styles.text}>About</Text>
+      <View style={[styles.box, styles.about]}>
+      <TouchableOpacity onPress={() => navigation.push('About')}>
+          <Text style={styles.text}>About</Text>
           </TouchableOpacity>
-        </View>
-      
-
-      
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-    container: {
+  container: {
     paddingTop: 20,
     paddingHorizontal: 10,
     justifyContent: 'center',
   },
   heading: {
-    fontSize:48,
+    fontSize: 48,
     color: '#F778A1',
     fontWeight: 'bold',
-    fontFamily:'AvenirNextCondensed-HeavyItalic',
-    paddingLeft:30,
-    paddingRight:30,
-    textShadowColor:'#EDC9AF',
-    textShadowOffset:{width: 5, height: 5},
-    textShadowRadius:10,
+    fontFamily: 'AvenirNextCondensed-HeavyItalic',
+    paddingLeft: 30,
+    paddingRight: 30,
+    textShadowColor: '#EDC9AF',
+    textShadowOffset: { width: 5, height: 5 },
+    textShadowRadius: 10,
   },
   HeaderBox: {
     padding: 10,
@@ -110,4 +102,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MyApp;
+export default App;
