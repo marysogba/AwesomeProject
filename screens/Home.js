@@ -38,6 +38,7 @@ const App = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
+    backgroundColor: '#FFDFDD',
     paddingHorizontal: 10,
     justifyContent: 'center',
   },

@@ -7,10 +7,12 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
+  TouchableHighlight,
 } from 'react-native';
 
 const Goals = ({ goal }) => {
   return (
+
     <View style={styles.GoalsBox}>
       <TouchableOpacity>
         <Text style={styles.text}>{goal.name}</Text>
@@ -65,16 +67,24 @@ const MyApp = () => {
     <SafeAreaView>
       <View style={styles.pageview}>
         <Text style={styles.text2}>MY VISION BOARD</Text>
-
         <FlatList
-          style={{ padding: 20 }}
+          style={{ padding: 10 }}
           data={GOALS}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <Goals goal={item} />}
         />
         <View style={styles.GoalsBox2}>
-          <Text style={styles.add}>Add to board</Text>
+          <TouchableOpacity>
+            <Text style={styles.add}>Add board</Text>
+          </TouchableOpacity>
         </View>
+
+        <View style={styles.GoalsBox2}>
+          <TouchableOpacity>
+            <Text style={styles.add}>Remove board</Text>
+          </TouchableOpacity>
+        </View>
+        
       </View>
     </SafeAreaView>
   );
